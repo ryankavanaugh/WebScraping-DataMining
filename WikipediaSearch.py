@@ -1,12 +1,3 @@
-__author__ = 'U464363'
-# Things to investigate:
-# 1. Why is the list built statefully? Can it be pulled functionally and immutably from the links in the article via map()?
-#  #     referring to linkeUrls = []
-# 2. Concurrent Modification: modifying a list at the same time as iterating over it.
-# #     This can lead to very confusing behavior. If you have "for a in b" you should never modify b inside that loop.
-# 3. For-loops should consume elements, not indices. Since you only use "current" in the context of "allLinks[current]",
-# #     current is an inappropriate level of indirection. That means it's too specific compared to its use.
-#       Try to get your for-loop to look like "for link in links" ???
 from BeautifulSoup import BeautifulSoup
 import urllib2
 import re
@@ -47,7 +38,6 @@ while (whileLink == firstLink):
             if allLinks[urlCounter].startswith('/wiki'):
                 currentLink = 'https://en.wikipedia.org' + allLinks[urlCounter]
                 linksToAdd = getLinks(currentLink)
-               # print('NillaPleaseNewSection')
-                #???
+
                 allLinks = allLinks + linksToAdd
                 #???
