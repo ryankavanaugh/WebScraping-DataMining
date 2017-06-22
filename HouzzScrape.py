@@ -1,4 +1,3 @@
-__author__ = 'U464363'
 # Step 1 : Grab all the links of a houzz page
 # Step 2 : Open each link one by one and grab firm name, address, phone, contact
 from BeautifulSoup import BeautifulSoup
