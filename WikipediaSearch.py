@@ -36,7 +36,7 @@ while (whileLink == firstLink):
             whileLink = x
         else:
             if allLinks[urlCounter].startswith('/wiki'):
-                currentLink = 'https://en.wikipedia.org' + allLinks[urlCounter]
+                currentLink = 'https://en.wikipedia.org' + allLinks[urlCounter] # Maybe use allLinks.pop([0]) here
                 linksToAdd = getLinks(currentLink)
 
                 allLinks = allLinks + linksToAdd
