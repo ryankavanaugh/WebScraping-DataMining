@@ -1,5 +1,3 @@
-# Step 1 : Grab all the links of a houzz page
-# Step 2 : Open each link one by one and grab firm name, address, phone, contact
 import xlrd
 import xlwt
 from xlwt import easyxf
@@ -25,22 +23,6 @@ from selenium.webdriver.common.by import By
 rowCounter = 0
 
 url = 'https://www.houzz.com/professionals/landscape-contractors/s/Landscape-Contractors/c/Portland%2C-OR/sortReviews'
-url2 = 'https://www.houzz.com/professionals/landscape-contractors/c/Portland--OR/sortReviews/p/15'
-url3 = 'https://www.houzz.com/professionals/landscape-contractors/c/Portland--OR/sortReviews/p/30'
-url4 = 'https://www.houzz.com/professionals/landscape-contractors/c/Portland--OR/sortReviews/p/45'
-url5 = 'https://www.houzz.com/professionals/landscape-contractors/c/Portland--OR/sortReviews/p/60'
-url6 = 'https://www.houzz.com/professionals/landscape-contractors/c/Portland--OR/sortReviews/p/75'
-url7 = 'https://www.houzz.com/professionals/landscape-contractors/c/Portland--OR/sortReviews/p/90'
-url8 = 'https://www.houzz.com/professionals/landscape-contractors/c/Portland--OR/sortReviews/p/105'
-url9 = 'https://www.houzz.com/professionals/landscape-contractors/c/Portland--OR/sortReviews/p/120'
-url10 = 'https://www.houzz.com/professionals/landscape-contractors/c/Portland--OR/sortReviews/p/135'
-url11 = 'https://www.houzz.com/professionals/landscape-contractors/c/Portland--OR/sortReviews/p/150'
-url12 = 'https://www.houzz.com/professionals/landscape-contractors/c/Portland--OR/sortReviews/p/165'
-url13 = 'https://www.houzz.com/professionals/landscape-contractors/c/Portland--OR/sortReviews/p/180'
-url14 = 'https://www.houzz.com/professionals/landscape-contractors/c/Portland--OR/sortReviews/p/195'
-
-
-
 
 
 workbookO = xlrd.open_workbook('Blank.xlsx')
@@ -162,15 +144,6 @@ def mineInfo(firmsList):
             excelCounter = excelCounter + 1
             rowCounter = rowCounter + 1
             pass
-    #phone = driver.find_element_by_id('phone')
-    #print(phone.text)
-
-        ##Driver get address, phone, name, and firm name by driver.find_element_ETC...
-        ## Print out info so we know it works, then...
-            ## write each element to the row of the spreadsheet we are working on
-                ## use a counter for row number as opposed to the list, since we will be importing several pages
-                ## I.E. variable: rowCounter
-                ## I.E. variable: rowCounter
 
 
 def main(webList):
@@ -182,22 +155,6 @@ def main(webList):
 
 #main(webList)
 firms = selectLinks(url)
-firms2 = selectLinks(url2)
-firms3 = selectLinks(url3)
-# firms4 = selectLinks(url4)
-# firms5 = selectLinks(url5)
-# firms6 = selectLinks(url6)
-# firms7 = selectLinks(url7)
-# firms8 = selectLinks(url8)
-# firms9 = selectLinks(url9)
-# firms10 = selectLinks(url10)
-# firms11 = selectLinks(url11)
-# firms12 = selectLinks(url12)
-# firms13 = selectLinks(url13)
-# firms14 = selectLinks(url14)
-
-firms = firms + firms2 + firms3
-        #+ firms4 + firms5 + firms6 + firms7 + firms8 + firms9 + firms10 + firms11 + firms12 + firms13 + firms14
 
 mineInfo(firms)
 
