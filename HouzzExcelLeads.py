@@ -153,7 +153,6 @@ def main(webList):
         firmsList = selectLinks(url) # individual pages on the site
         mineInfo(firmsList) # individual firms listed on the page
 
-#main(webList)
 firms = selectLinks(url)
 
 mineInfo(firms)
